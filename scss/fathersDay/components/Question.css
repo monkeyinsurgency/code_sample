@@ -1,0 +1,86 @@
+/* colours */
+/* Social media */
+/* Payment Providers*/
+/* landing pages */
+.questions {
+  border-bottom-width: 1px;
+  border-color: #879369;
+  border-style: solid;
+  padding: baseline(4) 0 baseline(2); }
+  @media (min-width: 992px) {
+    .questions {
+      position: relative; } }
+
+.question {
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  margin-bottom: baseline(2); }
+  .question h3 {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: bold;
+    color: #2d1f13;
+    font-size: baseline(1.625);
+    line-height: baseline(1.625);
+    margin-bottom: baseline(1.625);
+    text-align: center; }
+    .question h3.disabled {
+      opacity: 0.5; }
+
+.answers {
+  border: 1px solid #879369;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16); }
+  .answers.disabled {
+    border-color: #a4a198; }
+    .answers.disabled > div > div > div {
+      color: #a4a198 !important; }
+
+.answer {
+  cursor: pointer;
+  display: block;
+  height: baseline(7);
+  margin-bottom: baseline(2);
+  overflow: hidden;
+  position: relative;
+  width: 100%; }
+  .answer.is-answer {
+    background-color: #35bc66;
+    color: white;
+    pointer-events: none; }
+  .answer .answer-image {
+    height: baseline(7);
+    width: baseline(7);
+    float: left;
+    background-color: grey;
+    margin-right: baseline(2); }
+  .answer .answer-text {
+    line-height: baseline(7);
+    font-size: 18px;
+    text-align: left; }
+  .answer .fontello-angle-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #dfdacf; }
+    .answer .fontello-angle-right:before {
+      font-size: baseline(5);
+      line-height: baseline(7)-2px;
+      margin: 0; }
+
+@media (min-width: 992px) {
+  .question-enter {
+    animation: bounceInRight 650ms; }
+    .question-enter .fontello-angle-right {
+      opacity: 0; }
+  .crumbs-open .question-enter {
+    animation-delay: 300ms; }
+  .question-enter.question-enter-active .fontello-angle-right {
+    opacity: 1;
+    transition: opacity 250ms linear 650ms; }
+  .question-leave {
+    transform: translate3d(0, 0, 0); }
+  .question-leave.question-leave-active {
+    transform: translate3d(-3000px, 0, 0);
+    transition: transform 300ms ease-in; }
+    .question-leave.question-leave-active .fontello-angle-right {
+      display: none; } }
