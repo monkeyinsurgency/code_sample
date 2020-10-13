@@ -1,0 +1,138 @@
+@import '../../../variables';
+@import '../../../mom_mixins';
+@import '../fathersDayVariables';
+
+.suggestions-container {
+  margin: 1em 0;
+  float: left;
+  width: 100%;
+
+  @media (max-width: $screen-sm-max) {
+    margin: 0;
+  }
+
+  .suggestion-container,
+  .suggestions-header {
+    height: 52px;
+    margin-bottom: 16px;
+    background: #fff;
+    border: 1px solid $question-border;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+
+    a {
+      padding-right: 0;
+    }
+
+    svg {
+      margin-right: 16px;
+      fill: $question-border;
+      width: 9px;
+      height: 24px;
+    }
+  }
+
+  .suggestions-header {
+    align-items: flex-start;
+    background: url('/Images/dnp/seasonal_gift_finder/fathers_day/tasting-sets.jpg')
+      center left no-repeat;
+    background-size: contain;
+    flex-direction: column;
+    height: 119px;
+    justify-content: center;
+
+    a {
+      padding-left: 136px;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      position: relative;
+      justify-content: space-between;
+    }
+
+    .copy-box {
+      width: 87%;
+      h2 {
+        font-size: baseline(2.25);
+        color: $gf-text-light;
+        font-weight: bold;
+        margin: 0;
+        line-height: 2em;
+      }
+
+      p {
+        font-size: baseline(1.625);
+        line-height: baseline(2.125);
+        color: $black;
+      }
+    }
+
+    @media (max-width: $screen-xs-max) {
+      height: 80px;
+
+      a {
+        padding-left: 90px;
+      }
+
+      .copy-box {
+        width: 83%;
+
+        p {
+          font-size: baseline(1.4);
+          line-height: baseline(1.75);
+        }
+
+        h2 {
+          font-size: baseline(1.75);
+          margin-top: 0.5em;
+          line-height: baseline(3);
+        }
+      }
+    }
+  }
+
+  .suggestion-container {
+    font-weight: bold;
+
+    .suggestion {
+      color: $gf-text-light;
+      width: 90%;
+    }
+
+    a {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding-left: 16px;
+    }
+
+    svg {
+      fill: $question-border;
+    }
+    &:hover {
+      background-color: $gf-text-light;
+    }
+    &:active {
+      background-color: $gf-text-light-alt;
+    }
+    &:hover,
+    &:focus,
+    &:active {
+      .suggestion {
+        color: $white;
+      }
+      outline: none;
+      svg {
+        fill: $white;
+      }
+    }
+  }
+}

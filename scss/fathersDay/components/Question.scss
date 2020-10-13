@@ -1,0 +1,121 @@
+@import '../../../variables';
+@import '../../../mom_mixins';
+@import '../fathersDayVariables';
+
+.questions {
+  @media (min-width: $screen-md-min) {
+    position: relative;
+  }
+  border-bottom-width: 1px;
+  border-color: $question-border;
+  border-style: solid;
+  padding: baseline(4) 0 baseline(2);
+}
+
+.question {
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  margin-bottom: baseline(2);
+
+  h3 {
+    @include font-maker(bold);
+    color: $gf-text-dark;
+    font-size: baseline(1.625);
+    line-height: baseline(1.625);
+    margin-bottom: baseline(1.625);
+    text-align: center;
+    &.disabled {
+      opacity: 0.5;
+    }
+  }
+}
+
+.answers {
+  border: 1px solid $question-border;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16);
+  &.disabled {
+    border-color: $question-border-deactivated;
+    & > div > div > div {
+      color: $gf-text-deactivated !important;
+    }
+  }
+}
+
+.answer {
+  cursor: pointer;
+  display: block;
+  height: baseline(7);
+  margin-bottom: baseline(2);
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+
+  &.is-answer {
+    background-color: #35bc66;
+    color: white;
+    pointer-events: none;
+  }
+
+  .answer-image {
+    height: baseline(7);
+    width: baseline(7);
+    float: left;
+    background-color: grey;
+    margin-right: baseline(2);
+  }
+
+  .answer-text {
+    line-height: baseline(7);
+    font-size: 18px;
+    text-align: left;
+  }
+
+  .fontello-angle-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #dfdacf;
+
+    &:before {
+      font-size: baseline(5);
+      line-height: baseline(7) - 2px;
+      margin: 0;
+    }
+  }
+}
+
+@media (min-width: $screen-md-min) {
+  .question-enter {
+    animation: bounceInRight 650ms;
+
+    .fontello-angle-right {
+      opacity: 0;
+    }
+  }
+
+  .crumbs-open {
+    .question-enter {
+      animation-delay: 300ms;
+    }
+  }
+
+  .question-enter.question-enter-active {
+    .fontello-angle-right {
+      opacity: 1;
+      transition: opacity 250ms linear 650ms;
+    }
+  }
+
+  .question-leave {
+    transform: translate3d(0, 0, 0);
+  }
+
+  .question-leave.question-leave-active {
+    transform: translate3d(-3000px, 0, 0);
+    transition: transform 300ms ease-in;
+
+    .fontello-angle-right {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,337 @@
+@import '../../../fonts/roboto/stylesheet.css';
+@import '../../mom_functions';
+@import '../../variables';
+@import '../../mom_mixins';
+@import 'fathersDayVariables';
+
+#main-content.pageBgr {
+  background: $white;
+}
+
+#main-content {
+  overflow: hidden;
+  position: relative;
+}
+
+.gift-finder {
+  @import './components/Question';
+  @import './components/Results';
+  @import './components/Suggestions';
+
+  color: $gf-text-light;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  margin: 0 auto;
+
+  h1 {
+    display: block;
+    font-size: baseline(3);
+    margin-top: baseline(1);
+    margin-bottom: baseline(1);
+    color: #45423c;
+
+    @media (min-width: $screen-md-min) {
+      font-size: baseline(5);
+    }
+  }
+
+  h3.gift-finder-title {
+    background: $question-border;
+    height: 1px;
+    margin-top: 2em;
+    text-align: center;
+    span {
+      @include font-maker(bold, normal, RobotoCondensed);
+      color: $gf-text-header;
+      font-size: baseline(3.25);
+      line-height: baseline(3.25);
+      text-transform: uppercase;
+      position: relative;
+      z-index: 10;
+      padding: 0 0.75em 0 2.5em;
+      background: $white url('/Images/dnp/icons/icon-gift-2020.svg') 28px center
+        no-repeat;
+      background-size: 23px auto;
+      top: baseline(-1.5);
+      @media (max-width: $screen-xs-max) {
+        background-position-x: 11px;
+        background-size: 17px auto;
+        font-size: baseline(2.5);
+        padding: 0 0.45em 0 1.75em;
+      }
+    }
+  }
+
+  a {
+    color: #45423c;
+    transition: none;
+    &.btn-find-a-gift {
+      @include font-maker(bold, normal, RobotoCondensed);
+      background: linear-gradient(0deg, #8e3a18 0%, #dc6230 100%);
+      border: 1px solid $gf-button-dark;
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      color: #fff;
+      line-height: baseline(4.75);
+      font-size: baseline(2);
+      text-align: center;
+      height: 40px;
+      cursor: pointer;
+      max-width: 400px;
+      margin: 26px auto 0;
+    }
+  }
+
+  .layout-header {
+    position: relative;
+    text-align: center;
+  }
+}
+
+.giftfinder-loading {
+  font-family: sans-serif;
+  font-size: baseline(3);
+  padding-top: baseline(10);
+  text-align: center;
+
+  @media (min-width: $screen-md-min) {
+    height: 1104px;
+  }
+
+  .mom-spinner {
+    margin: 0 auto;
+    width: baseline(8);
+    height: baseline(8);
+    margin-bottom: baseline(2);
+  }
+}
+
+div .admin-checkbox {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.product-add-box {
+  margin: auto;
+  display: table;
+
+  select,
+  input {
+    width: 100px;
+    height: 32px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 6px;
+  }
+}
+
+.mt-1 {
+  margin-top: 1em;
+}
+
+.hero {
+  background-color: none;
+  height: 635px;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  margin-bottom: 1em;
+  width: 100%;
+  background-image: url('/Images/dnp/seasonal_gift_finder/fathers_day/fd-hero-wide.jpg');
+  background-position: 54% 71%;
+  background-repeat: no-repeat;
+  background-size: 154% auto;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .inner-hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-image {
+    min-height: 420px;
+    display: none;
+  }
+
+  .seasonal-copy {
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 24px 1em;
+    height: auto;
+    align-self: flex-end;
+    background: rgba(255, 255, 255, 0.75);
+
+    header {
+      p,
+      h1 {
+        text-align: center;
+      }
+
+      h1 {
+        @include font-maker(bold, normal, RobotoCondensed);
+        color: $gf-text-light-alt;
+        font-size: baseline(9);
+        line-height: baseline(9);
+        margin: baseline(1) 0;
+        text-transform: uppercase;
+        display: block;
+        span {
+          text-shadow: -1px -1px 0 $gf-text-light, 1px -1px 0 $gf-text-light,
+            -1px 1px 0 $gf-text-light, 1px 1px 0 $gf-text-light,
+            3px 3px 0 $black;
+        }
+
+        p {
+          @include font-maker(bold);
+          color: $black;
+          font-size: baseline(3);
+          line-height: baseline(4);
+          margin: 0;
+          text-transform: none;
+          margin: baseline(1) 0;
+          padding: 0 baseline(3);
+        }
+      }
+    }
+
+    .date {
+      border-top: 1px solid $question-border;
+      border-bottom: 1px solid $question-border;
+      margin-bottom: 1em;
+      text-align: center;
+
+      span {
+        @include font-maker(bold);
+        color: $black;
+        font-size: baseline(2);
+        line-height: baseline(4.5);
+        position: relative;
+        padding: 0 2em;
+      }
+    }
+  }
+
+  @media (max-width: $screen-lg-max) {
+    height: 435px;
+    background-position: 52% 72%;
+    background-size: 217% auto;
+    .hero-image-container {
+      background-position: 50% bottom;
+      background-size: 623px auto;
+    }
+
+    .seasonal-copy {
+      align-content: center;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      .date {
+        margin-bottom: 0;
+        span {
+          font-size: baseline(1.5);
+          line-height: baseline(3);
+        }
+      }
+      header h1 {
+        font-size: baseline(6.5);
+        line-height: baseline(8);
+        p {
+          font-size: baseline(2.25);
+          line-height: baseline(3);
+          padding: 0 baseline(1);
+        }
+      }
+    }
+  }
+
+  @media (max-width: $screen-xs-min) {
+    height: 650px;
+    background-position: center bottom;
+    background-size: 100% auto;
+    background-image: url('/Images/dnp/seasonal_gift_finder/fathers_day/fd-hero-tight.jpg');
+    justify-content: flex-start;
+
+    .seasonal-copy {
+      margin-top: 1em;
+      align-content: center;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      height: auto;
+      padding-top: baseline(3);
+      header h1 {
+        font-size: baseline(7);
+      }
+    }
+  }
+}
+
+.promo-hero {
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  margin-top: 1em;
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    border-color: transparent;
+    border-width: 1px;
+  }
+}
+
+.gift-finder-button {
+  @include font-maker(bold);
+  margin-top: 1em;
+  height: baseline(5.5);
+  width: 100%;
+  border: 1px solid #dc6230;
+  border-radius: 8px;
+  background: linear-gradient(0deg, #8e3a18 0%, #dc6230 100%);
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.24);
+  color: $white;
+  font-size: baseline(2);
+  line-height: 40px;
+  text-align: center;
+  outline: none;
+  cursor: pointer;
+
+  &:hover {
+    background: linear-gradient(180deg, #e68e6a 0%, #c85222 100%);
+  }
+  &:active {
+    background: linear-gradient(0deg, #e68e6a 0%, #c85222 100%);
+    outline: none;
+  }
+  &:visited,
+  &:focus {
+    outline: none;
+  }
+}
+
+.promo-tiles {
+  img {
+    width: 100%;
+    height: auto;
+  }
+  .tile-banner {
+    background: $gf-tile-banner;
+    color: $white;
+    text-align: center;
+    font-size: baseline(1.875);
+    text-transform: uppercase;
+    margin-top: -6px;
+    padding: 0.5em 0;
+    font-weight: bold;
+  }
+}
